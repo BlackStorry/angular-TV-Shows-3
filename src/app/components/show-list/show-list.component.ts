@@ -15,9 +15,16 @@ export class ShowListComponent implements OnInit {
   get shows(): Show[ ] {
     return this.showDataService.shows;
   }
+
   edit(show: Show){
     this.editShow = show;
   }
+
+  saveEdit(){
+    this.showDataService.saveEditShow(this.editShow);
+    this.editShow = null;
+  }
+
   toEdit(show: Show): boolean{
     if (!this.editShow) {
       return false;
@@ -26,6 +33,9 @@ export class ShowListComponent implements OnInit {
     } else {
       return true;
     }
+  }
+  delete(show: Show){
+    this.showDataService.deleteShow(show);
   }
 
   ngOnInit() {

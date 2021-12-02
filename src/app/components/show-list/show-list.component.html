@@ -12,16 +12,16 @@
     <tr *ngIf="!toEdit(s)">
       <td>{{ s.id }}</td>
       <td>{{ s.titel }}</td>
-      <td><button class="material-icons" onclick='edit(s)'>edit</button></td>
-      <td><button class="material-icons">delete</button></td>
+      <td><button class="material-icons" (click)='edit(s)'>edit</button></td>
+      <td><button class="material-icons" (click)='delete(s)'>delete</button></td>
     </tr>
     <tr *ngIf="toEdit(s)">
       <td><input class="form-control" id="editShowID" name="editShowID" type="number" min="0" placeholder="Hier die ID der Serie eingeben!" [(ngModel)]="s.id"></td>
       <td>
       <input class="form-control" id="editShowTitle" name="editShowTitle" type="text" placeholder="Hier den Title der Serie eingeben!" [(ngModel)]="s.titel">
       </td>
-      <td>
-      <button class="material-icons">save</button>
+      <td colspan="2">
+      <button class="material-icons" (click)='saveEdit()'>save</button>
       </td>
     </tr>
   </ng-container>
