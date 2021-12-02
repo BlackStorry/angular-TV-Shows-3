@@ -21,7 +21,7 @@ export class ShowListComponent implements OnInit {
   }
 
   saveEdit(){
-    this.showDataService.saveEditShow(this.editShow);
+    this.showDataService.saveEditShow();
     this.editShow = null;
   }
 
